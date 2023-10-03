@@ -1,0 +1,7 @@
+C:\teste-web-backend\my-api-teste\Attribute\bin\Debug\Attribute.dll
+C:\teste-web-backend\my-api-teste\Attribute\bin\Debug\Attribute.pdb
+C:\teste-web-backend\my-api-teste\Attribute\bin\Debug\Enum.dll
+C:\teste-web-backend\my-api-teste\Attribute\bin\Debug\Enum.pdb
+C:\teste-web-backend\my-api-teste\Attribute\obj\Debug\MyAttribute.csprojResolveAssemblyReference.cache
+C:\teste-web-backend\my-api-teste\Attribute\obj\Debug\Attribute.dll
+C:\teste-web-backend\my-api-teste\Attribute\obj\Debug\Attribute.pdb

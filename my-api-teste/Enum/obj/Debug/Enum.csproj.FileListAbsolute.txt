@@ -1,0 +1,5 @@
+C:\teste-web-backend\my-api-teste\Enum\bin\Debug\Enum.dll
+C:\teste-web-backend\my-api-teste\Enum\bin\Debug\Enum.pdb
+C:\teste-web-backend\my-api-teste\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\teste-web-backend\my-api-teste\Enum\obj\Debug\Enum.dll
+C:\teste-web-backend\my-api-teste\Enum\obj\Debug\Enum.pdb

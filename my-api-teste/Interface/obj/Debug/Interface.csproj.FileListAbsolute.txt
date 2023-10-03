@@ -1,0 +1,7 @@
+C:\teste-web-backend\my-api-teste\Interface\bin\Debug\Interface.dll
+C:\teste-web-backend\my-api-teste\Interface\bin\Debug\Interface.pdb
+C:\teste-web-backend\my-api-teste\Interface\bin\Debug\Util.dll
+C:\teste-web-backend\my-api-teste\Interface\bin\Debug\Util.pdb
+C:\teste-web-backend\my-api-teste\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
+C:\teste-web-backend\my-api-teste\Interface\obj\Debug\Interface.dll
+C:\teste-web-backend\my-api-teste\Interface\obj\Debug\Interface.pdb

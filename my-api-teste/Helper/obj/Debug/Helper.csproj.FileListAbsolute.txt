@@ -1,0 +1,17 @@
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Helper.dll
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Helper.pdb
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Args.dll
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Attribute.dll
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Enum.dll
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Exception.dll
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Interface.dll
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Util.dll
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Args.pdb
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Attribute.pdb
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Enum.pdb
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Exception.pdb
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Interface.pdb
+C:\teste-web-backend\my-api-teste\Helper\bin\Debug\Util.pdb
+C:\teste-web-backend\my-api-teste\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
+C:\teste-web-backend\my-api-teste\Helper\obj\Debug\Helper.dll
+C:\teste-web-backend\my-api-teste\Helper\obj\Debug\Helper.pdb

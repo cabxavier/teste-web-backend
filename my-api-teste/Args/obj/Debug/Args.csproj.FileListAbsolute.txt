@@ -1,0 +1,11 @@
+C:\teste-web-backend\my-api-teste\Args\bin\Debug\Args.dll
+C:\teste-web-backend\my-api-teste\Args\bin\Debug\Args.pdb
+C:\teste-web-backend\my-api-teste\Args\bin\Debug\Enum.dll
+C:\teste-web-backend\my-api-teste\Args\bin\Debug\Interface.dll
+C:\teste-web-backend\my-api-teste\Args\bin\Debug\Util.dll
+C:\teste-web-backend\my-api-teste\Args\bin\Debug\Enum.pdb
+C:\teste-web-backend\my-api-teste\Args\bin\Debug\Interface.pdb
+C:\teste-web-backend\my-api-teste\Args\bin\Debug\Util.pdb
+C:\teste-web-backend\my-api-teste\Args\obj\Debug\Args.csprojResolveAssemblyReference.cache
+C:\teste-web-backend\my-api-teste\Args\obj\Debug\Args.dll
+C:\teste-web-backend\my-api-teste\Args\obj\Debug\Args.pdb
