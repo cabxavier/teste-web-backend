@@ -5945,6 +5945,7 @@ AS
 		  FROM dbo.PontoTuristico AS ptu
 	INNER JOIN dbo.Cidade         AS cid ON ptu.IdCidade = cid.IdCidade
 	INNER JOIN dbo.Estado         AS est ON cid.IdEstado = est.IdEstado
+	  ORDER BY ptu.DataInclusao  DESC
 
   
     SET NOCOUNT OFF
@@ -5965,6 +5966,7 @@ IF EXISTS( SELECT name
 GO
 
 CREATE PROCEDURE [dbo].[stp_EstadoGet]
+                       @IdEstado Int = 0
 AS
   
   BEGIN
@@ -5976,6 +5978,7 @@ AS
 		       Descricao   = est.Descricao,
 			   Sigla       = est.Sigla
 		  FROM dbo.Estado AS est
+		 WHERE ( ( @IdEstado = 0 ) OR ( est.IdEstado = @IdEstado ) )
       ORDER BY est.Sigla
 
     
@@ -6067,6 +6070,45 @@ AS
   END
 GO
 
+
+IF EXISTS( SELECT name
+             FROM SysObjects
+			WHERE name = 'stp_PontoTuristicoUpdate'
+			  AND type = 'P' )
+  BEGIN
+    
+	DROP PROCEDURE [dbo].[stp_PontoTuristicoUpdate]
+
+  END
+GO
+
+CREATE PROCEDURE [dbo].[stp_PontoTuristicoUpdate]
+                       @IdPontoTuristico Int Out,
+					   @Nome             VarChar(100), 
+                       @Descricao        VarChar(100),
+                       @Referencia       VarChar(100) = NULL,
+                       @IdCidade         Int
+
+AS
+  BEGIN
+    
+	SET NOCOUNT ON
+	    
+
+		UPDATE dbo.PontoTuristico
+		   SET Nome             = @Nome, 
+               Descricao        = @Descricao,
+               Referencia       = @Referencia,
+               IdCidade         = @IdCidade
+		 WHERE IdPontoTuristico = @IdPontoTuristico
+
+	
+	SET NOCOUNT OFF
+
+  END
+GO
+
+
 IF EXISTS( SELECT name
              FROM SysObjects
 			WHERE name = 'stp_PontoTuristicoDelete'
@@ -6096,4 +6138,40 @@ AS
 GO
 
 
+IF EXISTS( SELECT name
+             FROM SysObjects
+			WHERE name = 'stp_PontoTuristicoCarregarDadosGet'
+			  AND type = 'P' )
+  BEGIN
+    
+	DROP PROCEDURE [dbo].[stp_PontoTuristicoCarregarDadosGet]
+  
+  END
+GO
+
+CREATE PROCEDURE [dbo].[stp_PontoTuristicoCarregarDadosGet]
+                       @IdPontoTuristico Int
+AS
+  
+  BEGIN
+    
+	SET NOCOUNT ON
+	    
+
+		SELECT IdPontoTuristico     = ptu.IdPontoTuristico,
+		       Nome                 = ptu.Nome,
+               Descricao            = ptu.Descricao,
+			   IdEstado             = cid.IdEstado,
+			   IdCidade             = ptu.IdCidade,
+               Referencia           = ptu.Referencia,
+			   DataInclusao         = ptu.DataInclusao
+		  FROM dbo.PontoTuristico  AS ptu
+	INNER JOIN dbo.Cidade          AS cid ON ptu.IdCidade = cid.IdCidade
+		 WHERE ptu.IdPontoTuristico = @IdPontoTuristico
+
+    
+	SET NOCOUNT OFF
+
+  END
+GO
 

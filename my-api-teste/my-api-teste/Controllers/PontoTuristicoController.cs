@@ -14,6 +14,7 @@ namespace my_api_teste.Controllers
 {
     public class PontoTuristicoController : ApiController
     {
+        [HttpGet]
         [Route("api/pontos-turisticos")]
         public object GetPontoTuristico()
         {
@@ -27,12 +28,13 @@ namespace my_api_teste.Controllers
             }
         }
 
-        [Route("api/estados")]
-        public object GetEstado()
+        [HttpGet]
+        [Route("api/{idEstado}/estados")]
+        public object GetEstado(int IdEstado)
         {
             try
             {
-                return (new Estado()).GetEstado();
+                return (new Estado()).GetEstado(IdEstado);
             }
             catch (Exception ex)
             {
@@ -41,6 +43,7 @@ namespace my_api_teste.Controllers
             }
         }
 
+        [HttpGet]
         [Route("api/estados/{idEstado}/cidades")]
         public object GetCidadeGetByIdEstado(int IdEstado)
         {
@@ -83,6 +86,55 @@ namespace my_api_teste.Controllers
                 {
                     _Conn.Close(_Sucesso);
                 }
+            }
+        }
+
+
+        [HttpPut]
+        [Route("api/pontos-turisticos/atualizar/{tpPontoTuristico}")]
+        public object PutPontoTuristicoUpdate(tpPontoTuristico tpPontoTuristico)
+        {
+            ConnectionHelper _Conn = new ConnectionHelper();
+
+            bool _Sucesso = false;
+
+            try
+            {
+                _Conn.Open(true);
+
+                tpPontoTuristico.IdPontoTuristico = (new BllPontoTuristico(_Conn)).Update(tpPontoTuristico);
+
+                _Sucesso = true;
+
+                return Request.CreateResponse(HttpStatusCode.OK, "Alteração realizado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, new HttpError(ex.Message));
+            }
+            finally
+            {
+                if (_Conn.IsOpened())
+                {
+                    _Conn.Close(_Sucesso);
+                }
+            }
+        }
+
+
+        [HttpGet]
+        [Route("api/{idPontoTuristico}/pontos-turisticos")]
+        public object GetCarregarDados(int IdPontoTuristico)
+        {
+            try
+            {
+                var _Lista = (new BllPontoTuristico()).GetCarregarDados(IdPontoTuristico);
+
+                return _Lista;
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, new HttpError(ex.Message));
             }
         }
 

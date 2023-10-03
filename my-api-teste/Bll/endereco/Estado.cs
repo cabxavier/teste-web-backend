@@ -23,13 +23,13 @@ namespace Bll.endereco
         #endregion
 
         #region GetEstado
-        public lstEstado GetEstado()
+        public lstEstado GetEstado(int IdEstado)
         {
             lstEstado _ListaEstado = new lstEstado();
 
             try
             {
-                _ListaEstado = ((dbEstado)_Dal).GetEstado();
+                _ListaEstado = ((dbEstado)_Dal).GetEstado(IdEstado);
             }
             catch
             {

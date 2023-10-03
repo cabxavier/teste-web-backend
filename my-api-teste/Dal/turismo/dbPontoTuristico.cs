@@ -12,8 +12,10 @@ namespace Dal.turismo
     {
         #region Constantes
         private const string CS_PONTO_TURISTICO_INSERT = "stp_PontoTuristicoInsert";
+        private const string CS_PONTO_TURISTICO_UPDATE = "stp_PontoTuristicoUpdate";
         private const string CS_PONTO_TURISTICO_DELETE = "stp_PontoTuristicoDelete";
         private const string CS_PONTO_TURISTICO_GET = "stp_PontoTuristicoGet";
+        private const string CS_PONTO_TURISTICO_CARREGAR_DADOS_GET = "stp_PontoTuristicoCarregarDadosGet";
         #endregion
 
 
@@ -110,6 +112,33 @@ namespace Dal.turismo
 
 
 
+        #region Método Update
+        public int Update(tpPontoTuristico tpPontoTuristico)
+        {
+            List<SqlParameter> _Params = new List<SqlParameter>();
+
+            try
+            {
+                _Params.Add(new SqlParameter("IdPontoTuristico", tpPontoTuristico.IdPontoTuristico));
+                _Params.Add(new SqlParameter("Nome", tpPontoTuristico.Nome));
+                _Params.Add(new SqlParameter("Descricao", tpPontoTuristico.Descricao));
+                _Params.Add(new SqlParameter("Referencia", string.IsNullOrWhiteSpace(tpPontoTuristico.Referencia) ? null : tpPontoTuristico.Referencia));
+                _Params.Add(new SqlParameter("IdCidade", tpPontoTuristico.IdCidade));
+
+                Conn.ExecuteNonQuery(CS_PONTO_TURISTICO_UPDATE, CommandType.StoredProcedure, _Params);
+            }
+
+            catch
+            {
+                throw;
+            }
+
+            return tpPontoTuristico.IdPontoTuristico;
+        }
+        #endregion
+
+
+
         #region Método Delete
         public void Delete(int IdPontoTuristico)
         {
@@ -140,9 +169,9 @@ namespace Dal.turismo
 
                 foreach (DataRow Row in _Tabela.Rows)
                 {
-                    tpPontoTuristicoVisao _tpPontoTuristico = (tpPontoTuristicoVisao)this.ToDto(Row, new tpPontoTuristicoVisao());
+                    tpPontoTuristicoVisao _tpPontoTuristicoVisao = (tpPontoTuristicoVisao)this.ToDto(Row, new tpPontoTuristicoVisao());
 
-                    _ListaPontoTuristicoVisao.Add(_tpPontoTuristico);
+                    _ListaPontoTuristicoVisao.Add(_tpPontoTuristicoVisao);
                 }
             }
             catch
@@ -151,6 +180,36 @@ namespace Dal.turismo
             }
 
             return _ListaPontoTuristicoVisao;
+        }
+        #endregion
+
+
+        #region Método GetCarregarDados
+        public lstPontoTuristico GetCarregarDados(int IdPontoTuristico)
+        {
+            List<SqlParameter> _Params = new List<SqlParameter>();
+
+            lstPontoTuristico _ListaPontoTuristico = new lstPontoTuristico();
+
+            try
+            {
+                _Params.Add(new SqlParameter("IdPontoTuristico", IdPontoTuristico));
+
+                DataTable _Tabela = Conn.ExecuteDataTable(CS_PONTO_TURISTICO_CARREGAR_DADOS_GET, CommandType.StoredProcedure, _Params);
+
+                foreach (DataRow Row in _Tabela.Rows)
+                {
+                    tpPontoTuristico _tpPontoTuristico = (tpPontoTuristico)this.ToDto(Row);
+
+                    _ListaPontoTuristico.Add(_tpPontoTuristico);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return _ListaPontoTuristico;
         }
         #endregion
     }

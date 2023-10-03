@@ -40,6 +40,23 @@ namespace Bll.turismo
         #endregion
 
 
+        #region Método Update
+        public int Update(tpPontoTuristico tpPontoTuristico)
+        {
+            try
+            {
+                tpPontoTuristico.IdPontoTuristico = ((dbPontoTuristico)_Dal).Update(tpPontoTuristico);
+            }
+            catch
+            {
+                throw;
+            }
+
+            return tpPontoTuristico.IdPontoTuristico;
+        }
+        #endregion
+
+
         #region Método Delete
         public void Delete(int IdPontoTuristico)
         {
@@ -70,6 +87,25 @@ namespace Bll.turismo
             }
 
             return _ListaPontoTuristicoVisao;
+        }
+        #endregion
+
+
+        #region GetCarregarDados
+        public lstPontoTuristico GetCarregarDados(int IdPontoTuristico)
+        {
+            lstPontoTuristico _ListaPontoTuristico = new lstPontoTuristico();
+
+            try
+            {
+                _ListaPontoTuristico = ((dbPontoTuristico)_Dal).GetCarregarDados(IdPontoTuristico);
+            }
+            catch
+            {
+                throw;
+            }
+
+            return _ListaPontoTuristico;
         }
         #endregion
     }

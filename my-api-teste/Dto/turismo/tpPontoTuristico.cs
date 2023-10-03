@@ -14,6 +14,7 @@ namespace Dto.turismo
         public string Descricao { get; set; }
         public string Referencia { get; set; }
         public int IdCidade { get; set; }
+        public int IdEstado { get; set; }
         public DateTime DataInclusao { get; set; }
 
         public tpPontoTuristico()
@@ -28,6 +29,7 @@ namespace Dto.turismo
             this.Descricao = null;
             this.Referencia = null;
             this.IdCidade = 0;
+            this.IdEstado = 0;
             this.DataInclusao = DateTime.MinValue;
         }
     }

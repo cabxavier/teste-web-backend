@@ -4,6 +4,7 @@ using Helper;
 using Interface;
 using Dto.endereco;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Dal.endereco
 {
@@ -77,13 +78,17 @@ namespace Dal.endereco
 
 
         #region Método GetEstado
-        public lstEstado GetEstado()
+        public lstEstado GetEstado(int IdEstado)
         {
             lstEstado _ListaEstado = new lstEstado();
 
+            List<SqlParameter> _Params = new List<SqlParameter>();
+
             try
             {
-                DataTable _Tabela = Conn.ExecuteDataTable(CS_ESTADO_GET, CommandType.StoredProcedure);
+                _Params.Add(new SqlParameter("IdEstado", IdEstado));
+
+                DataTable _Tabela = Conn.ExecuteDataTable(CS_ESTADO_GET, CommandType.StoredProcedure, _Params);
 
                 foreach (DataRow Row in _Tabela.Rows)
                 {
