@@ -1,0 +1,5 @@
+C:\teste-web-backend\my-api-teste\DataBase\bin\Debug\DataBase.dll
+C:\teste-web-backend\my-api-teste\DataBase\bin\Debug\DataBase.pdb
+C:\teste-web-backend\my-api-teste\DataBase\obj\Debug\DataBase.csprojResolveAssemblyReference.cache
+C:\teste-web-backend\my-api-teste\DataBase\obj\Debug\DataBase.dll
+C:\teste-web-backend\my-api-teste\DataBase\obj\Debug\DataBase.pdb
