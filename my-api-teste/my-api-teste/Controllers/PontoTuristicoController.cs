@@ -15,7 +15,7 @@ namespace my_api_teste.Controllers
     public class PontoTuristicoController : ApiController
     {
         [HttpGet]
-        [Route("api/pontos-turisticos")]
+        [Route("api/ponto-turistico")]
         public object GetPontoTuristico()
         {
             try
@@ -29,7 +29,7 @@ namespace my_api_teste.Controllers
         }
 
         [HttpGet]
-        [Route("api/{idEstado}/estados")]
+        [Route("api/{idEstado}/estado")]
         public object GetEstado(int IdEstado)
         {
             try
@@ -44,7 +44,7 @@ namespace my_api_teste.Controllers
         }
 
         [HttpGet]
-        [Route("api/estados/{idEstado}/cidades")]
+        [Route("api/estado/{idEstado}/cidade")]
         public object GetCidadeGetByIdEstado(int IdEstado)
         {
             try
@@ -58,7 +58,7 @@ namespace my_api_teste.Controllers
         }
 
         [HttpPost]
-        [Route("api/pontos-turisticos/novo")]
+        [Route("api/ponto-turistico/novo")]
         public object PostPontoTuristicoInsert(tpPontoTuristico tpPontoTuristico)
         {
             ConnectionHelper _Conn = new ConnectionHelper();
@@ -91,7 +91,7 @@ namespace my_api_teste.Controllers
 
 
         [HttpPut]
-        [Route("api/pontos-turisticos/atualizar/{tpPontoTuristico}")]
+        [Route("api/ponto-turistico/atualizar/{tpPontoTuristico}")]
         public object PutPontoTuristicoUpdate(tpPontoTuristico tpPontoTuristico)
         {
             ConnectionHelper _Conn = new ConnectionHelper();
@@ -123,7 +123,7 @@ namespace my_api_teste.Controllers
 
 
         [HttpGet]
-        [Route("api/{idPontoTuristico}/pontos-turisticos")]
+        [Route("api/{idPontoTuristico}/ponto-turistico")]
         public object GetCarregarDados(int IdPontoTuristico)
         {
             try
@@ -140,7 +140,7 @@ namespace my_api_teste.Controllers
 
 
         [HttpDelete]
-        [Route("api/pontos-turisticos/{idPontoTuristico}/excluir")]
+        [Route("api/ponto-turistico/{idPontoTuristico}/excluir")]
         public object DeletePontoTuristico(int IdPontoTuristico)
         {
             ConnectionHelper _Conn = new ConnectionHelper();
