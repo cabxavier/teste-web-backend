@@ -1,5 +1,4 @@
 C:\teste-web-backend\my-api-teste\Exception\bin\Debug\Exception.dll
 C:\teste-web-backend\my-api-teste\Exception\bin\Debug\Exception.pdb
-C:\teste-web-backend\my-api-teste\Exception\obj\Debug\MyException.csprojResolveAssemblyReference.cache
 C:\teste-web-backend\my-api-teste\Exception\obj\Debug\Exception.dll
 C:\teste-web-backend\my-api-teste\Exception\obj\Debug\Exception.pdb

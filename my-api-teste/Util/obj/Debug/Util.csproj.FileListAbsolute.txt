@@ -1,5 +1,4 @@
 C:\teste-web-backend\my-api-teste\Util\bin\Debug\Util.dll
 C:\teste-web-backend\my-api-teste\Util\bin\Debug\Util.pdb
-C:\teste-web-backend\my-api-teste\Util\obj\Debug\Util.csprojResolveAssemblyReference.cache
 C:\teste-web-backend\my-api-teste\Util\obj\Debug\Util.dll
 C:\teste-web-backend\my-api-teste\Util\obj\Debug\Util.pdb
